@@ -67,5 +67,9 @@ def gantt(request):
     return render(request, "gantt.html",)
 
 
-def GCSSHOME(request):
+def moe_HOME(request):
     return render(request, "moe_HOME.html", )
+
+
+def moe_investment_estimate(request):
+    return render(request, "moe_investment_estimate.html", )

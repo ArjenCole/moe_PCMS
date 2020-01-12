@@ -30,7 +30,8 @@ urlpatterns = [
     url(r'^tables/', views.index),
     url(r'^login/', views.login),
     url(r'^gantt/', views.gantt),
-    url('', views.GCSSHOME)# views.login
+    url(r'^moe_investment_estimate/', views.moe_investment_estimate),
+    url('', views.moe_HOME),# views.login
 ]
 
 
