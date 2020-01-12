@@ -68,4 +68,4 @@ def gantt(request):
 
 
 def GCSSHOME(request):
-    return render(request, "GCSS-HOME.html",)
+    return render(request, "moe_HOME.html", )
