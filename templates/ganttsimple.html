@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>测试demo</title>
+        <style type="text/css">
+            #container {
+                width: 100%;
+                overflow: scroll;
+                height: calc(100vh - 0px);
+                width: 1900px;
+            }
+            .carNum {
+                float:left;
+                width:100px;
+                text-align: center;
+            }
+            #hour {
+                width: 1800px;
+            }
+            #hour div{
+                width: 60px;
+                float: left;
+                border-left: 1px solid #ddd;
+                background: #ccc;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .gantt-item {
+                width: 1800px;
+            }
+            .gantt-item:hover{
+                background:rgba(0,0,0,.1);
+            }
+            .gantt-item span {
+                height: 20px;;
+                display: inline-block;
+                margin: 5px 0px;
+                font-size: 12px;
+                text-align: center;
+                color:#fff;
+                background:green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="hour" style="float:right">
+            </div>
+            <div style="background:#ccc;">车牌号</div>
+            <div class="carNum">
+                <div style="line-height:30px;">川A</div>
+                <div style="line-height:30px;">川A384</div>
+                <div style="line-height:30px;">川A09384</div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var gantt = {
+            demoData: [
+            {
+                innerData: [
+                    {
+                        start: '2019/11/6',
+                        end: '2019/11/8',
+                        value: '测试点1',
+                        bg: 'green'
+                    },
+                    {
+                        start: '2019/11/12',
+                        end: '2019/11/13',
+                        value: '2',
+                        bg: 'red'
+                    },
+                    {
+                        start: '2019/11/14',
+                        end: '2019/11/18',
+                        value: '测试点3',
+                        bg: 'green'
+                    }
+                ]
+            },
+            {
+                innerData: [
+                {
+                start: '2019/1/21 5:23',
+                end: '2019/1/21 6:05',
+                value: 'A站点',
+                bg: 'blue'
+                },
+                {
+                start: '2019/1/21 10:23',
+                end: '2019/1/21 13:45',
+                value: 'B站点',
+                bg: 'green'
+                },
+                {
+                start: '2019/1/21 21:00',
+                end: '2019/1/22 3:35',
+                value: 'C站点',
+                bg: 'yellow'
+                },
+                ]
+            },
+            {
+                innerData: [
+                {
+                start: '2019/1/21 8:23',
+                end: '2019/1/21 10:05',
+                value: 'A站点',
+                bg: 'blue'
+                },
+                {
+                start: '2019/1/21 13:23',
+                end: '2019/1/21 14:45',
+                value: 'B站点',
+                bg: 'green'
+                },
+                {
+                start: '2019/1/21 22:00',
+                end: '2019/1/22 3:35',
+                value: 'C站点',
+                bg: 'red'
+                },
+                {
+                start: '2019/1/22 4:00',
+                end: '2019/1/22 7:35',
+                value: 'D站点',
+                bg: 'green'
+                },
+                ]
+            },
+            ],
+            // 初始化
+            init: function() {
+                //this.showNowTime();
+                this.createHours();
+                this.createData();
+            },
+            // 创建时间
+            createHours: function(){
+                var html = '';
+
+
+                var today = new Date();
+                var thisMonth = today.getMonth() + 1;
+                var thisDay = today.getDate();
+                for (let i = thisDay; i < thisDay + 15; i++){
+                    html += `<div>${thisMonth} - ${i}</div>`
+                }
+                document.getElementById('hour').innerHTML = html;
+            },
+            // 当前时间线
+            showNowTime: function() {
+                var date = new Date();
+                var h = date.getHours(),
+                m = date.getMinutes();
+                var offset = (h - 5) * 60 + m;
+                var html = `<div class="nowTime" style="margin-left:${offset}px"></div>`;
+                document.getElementById('container').innerHTML += `<div class="gantt-item">${html}</div>`;
+            },
+            createData: function() {
+                var data = this.demoData;
+                var today = new Date().getDate(); // 今天的日期
+                for (let m = 0; m< data.length; m++) {
+                    var innerData = data[m].innerData;
+                    var html = '';
+                    var allLeft = 18;
+                    for (let i = 0; i< innerData.length; i++) {
+                        var start = new Date(innerData[i].start),
+                        end = new Date(innerData[i].end),
+                        bg = innerData[i].bg,
+                        start_d = start.getDate(),
+                        end_d = end.getDate(),
+                        left_offset = (start_d - today) * 60;
+                        _left_offset = left_offset - allLeft;
+                        width = ((end_d - start_d + 1) * 60);
+                        console.log(start_d ,end_d,_left_offset,allLeft);
+
+
+
+
+                        allLeft = left_offset + width;
+                        html += `<span style="width:${width}px;margin-left:${_left_offset}px;background:${bg}">${innerData[i].value}</span>`;
+                    }
+                    document.getElementById('container').innerHTML += `<div class="gantt-item" >${html}</div>`;
+                }
+            }
+        }
+        gantt.init();
+    </script>
+</html>
