@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^tables/', views.tables),
     url(r'^login/', views.login),
     url(r'^gantt/', views.gantt),
+    url(r'^moe_HOME/', views.moe_HOME),
     url(r'^moe_investment_estimate/', views.moe_investment_estimate),
     url('', views.login),# views.login
 ]
