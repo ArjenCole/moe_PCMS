@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^moe_Tender_offer/', views.moe_Tender_offer),
     url(r'^moe_Tender_offer_diff/', views.moe_Tender_offer_diff),
     url(r'^moe_Tender_offer_diff_analysis/', views.moe_Tender_offer_diff_analysis),
+    url(r'^moe_Tender_offer_risk/', views.moe_Tender_offer_risk),
     url('', views.login),# views.login
 ]
 
