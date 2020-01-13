@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^login/', views.login),
     url(r'^gantt/', views.gantt),
     url(r'^moe_investment_estimate/', views.moe_investment_estimate),
-    url('', views.moe_HOME),# views.login
+    url('', views.login),# views.login
 ]
 
 

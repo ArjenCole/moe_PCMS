@@ -27,9 +27,9 @@ def login(request):
             request.session['UserName'] = qUser.Name
             request.session['UserDepartment'] = getDepartment(qUser)
             request.session.set_expiry(600)
-            return render(request, "index.html")
+            return render(request, "moe_HOME.html")
         else:
-            return render(request, 'home.html', {'error': "账号密码错误！"}, )
+            return render(request, 'login.html', {'error': "账号密码错误！"}, )
 
 
 def getDepartment(pUser):
