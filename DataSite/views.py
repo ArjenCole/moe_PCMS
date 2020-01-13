@@ -73,3 +73,7 @@ def moe_HOME(request):
 
 def moe_investment_estimate(request):
     return render(request, "moe_investment_estimate.html", )
+
+
+def moe_Tender_offer(request):
+    return render(request, "moe_Tender_offer.html", )

@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^gantt/', views.gantt),
     url(r'^moe_HOME/', views.moe_HOME),
     url(r'^moe_investment_estimate/', views.moe_investment_estimate),
+    url(r'^moe_Tender_offer/', views.moe_Tender_offer),
     url('', views.login),# views.login
 ]
 
