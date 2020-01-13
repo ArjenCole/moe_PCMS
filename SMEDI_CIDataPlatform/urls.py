@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^moe_investment_estimate/', views.moe_investment_estimate),
     url(r'^moe_Tender_offer/', views.moe_Tender_offer),
     url(r'^moe_Tender_offer_diff/', views.moe_Tender_offer_diff),
-    url(r'^moe_Tender_offer_diff_analysis/', views.moe_Tender_offer_diff),
+    url(r'^moe_Tender_offer_diff_analysis/', views.moe_Tender_offer_diff_analysis),
     url('', views.login),# views.login
 ]
 
