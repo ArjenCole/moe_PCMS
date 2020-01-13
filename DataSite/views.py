@@ -77,3 +77,7 @@ def moe_investment_estimate(request):
 
 def moe_Tender_offer(request):
     return render(request, "moe_Tender_offer.html", )
+
+
+def moe_Tender_offer_diff(request):
+    return render(request, "moe_Tender_offer_diff.html", )
