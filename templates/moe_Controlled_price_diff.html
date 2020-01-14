@@ -72,7 +72,7 @@
           <!-- Sidebar Navidation Menus-->
           <span class="heading">成本管理</span>
           <ul class="list-unstyled">
-                    <li class="active"><a href="/moe_HOME/"> <i class="icon-home"></i> 首 页 </a></li>
+                    <li><a href="/moe_HOME/"> <i class="icon-home"></i> 首 页 </a></li>
                     <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">  估概预算管理 </a>
                       <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                         <li><a href="/moe_investment_estimate/">估算管理</a></li>
@@ -90,7 +90,7 @@
                     <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">  招 标 管 理 </a>
                       <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                         <li><a href="/moe_Controlled_price/">清单控制价</a></li>
-                        <li><a href="/moe_Controlled_price_diff/">招标偏差分析</a></li>
+                        <li class="active"><a href="/moe_Controlled_price_diff/">招标偏差分析</a></li>
                         <li><a href="#">报价分析评测</a></li>
                       </ul>
                     </li>
@@ -132,217 +132,34 @@
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom"> 首 页 </h2>
+              <h2 class="no-margin-bottom"> 招标偏差分析 </h2>
             </div>
           </header>
-          <!-- Dashboard Counts Section-->
-          <section class="dashboard-counts no-padding-bottom">
-            <div class="container-fluid">
-              <div class="row bg-white has-shadow">
-                <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
-                  <div class="item d-flex align-items-center">
-                    <div class="icon bg-violet"><i class="icon-user"></i></div>
-                    <div class="title"><span> 项 目<br>进行中</span>
-                      <div class="progress">
-                        <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
-                      </div>
-                    </div>
-                    <div class="number"><strong>2</strong></div>
-                  </div>
-                </div>
-                <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
-                  <div class="item d-flex align-items-center">
-                    <div class="icon bg-red"><i class="icon-padnote"></i></div>
-                    <div class="title"><span> 项 目<br>已归档</span>
-                      <div class="progress">
-                        <div role="progressbar" style="width: 70%; height: 4px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
-                      </div>
-                    </div>
-                    <div class="number"><strong>8</strong></div>
-                  </div>
-                </div>
-                <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
-                  <div class="item d-flex align-items-center">
-                    <div class="icon bg-green"><i class="icon-bill"></i></div>
-                    <div class="title"><span> 任 务<br>待处理</span>
-                      <div class="progress">
-                        <div role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
-                      </div>
-                    </div>
-                    <div class="number"><strong>4</strong></div>
-                  </div>
-                </div>
-                <!-- Item -->
-                <div class="col-xl-3 col-sm-6">
-                  <div class="item d-flex align-items-center">
-                    <div class="icon bg-orange"><i class="icon-check"></i></div>
-                    <div class="title"><span> 任 务<br>已处理</span>
-                      <div class="progress">
-                        <div role="progressbar" style="width: 50%; height: 4px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
-                      </div>
-                    </div>
-                    <div class="number"><strong>6</strong></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <!-- Forms Section-->
           <section class="forms">
             <div class="container-fluid">
               <div class="row">
-                <!-- 当前项目-->
+                <!-- 估算列表 -->
                 <div class="col-lg-12">
                   <div class="recent-updates card">
                     <div class="card-header">
-                      <h3 class="h4">当前项目</h3>
+                      <h3 class="h4">投标报价列表</h3>
                     </div>
                     <div class="card-body no-padding">
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <div class="title">
-                            <h5>项目名称</h5>
-                          </div>
-                        </div>
-                        <div>
-                            <h4>上海市两港大道快速化工程S2立交匝道</h4>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <div class="title">
-                            <h5>项目编号</h5>
-                          </div>
-                        </div>
-                        <div>
-                            <h4>2019SH198</h4>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <div class="title">
-                            <h5>项目业主</h5>
-                          </div>
-                        </div>
-                        <div>
-                            <h4>上海市临港新区管委会</h4>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <div class="title">
-                            <h5>项目经理</h5>
-                          </div>
-                        </div>
-                        <div>
-                            <h4>沈佳麟</h4>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <!-- 筛选项目 -->
-                <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <h3 class="h4">筛选项目</h3>
-                    </div>
-                    <div class="card-body">
-                      <div class="form-group row">
-                        <label for="forminline" class="col-sm-3 form-control-label">项目信息</label>
-                        <form class="form-inline" name="forminline">
-                          <div class="form-group">
-                            <label for="inlineFormInput" class="sr-only">Name</label>
-                            <input id="inlineFormInput" type="text" placeholder="项目编号" class="mr-3 form-control">
-                          </div>
-                          <div class="form-group">
-                            <label for="inlineFormInputGroup" class="sr-only">Username</label>
-                            <input id="inlineFormInputGroup" type="text" required data-msg="请输入项目名称" placeholder="项目名称" class="mr-3 form-control">
-                          </div>
-                        </form>
-                        <div>
-                            <button type="submit" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp筛 选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级筛选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                              <!- 高级筛选->
-                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
-                                <div role="document" class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h4 id="exampleModalLabel" class="modal-title">高级筛选</h4>
-                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p>请输入高级筛选信息</p>
-                                      <form>
-                                        <div class="form-group">
-                                          <label>项目名称</label>
-                                          <input type="email" placeholder="项目名称" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目编号</label>
-                                          <input type="password" placeholder="项目编号" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目业主</label>
-                                          <input type="password" placeholder="业主单位名称" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目经理</label>
-                                          <input type="password" placeholder="经理姓名" class="form-control">
-                                        </div>
-                                      </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
-                                      <button type="button" class="btn btn-primary">确定</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- 项目列表 -->
-                <div class="col-lg-12">
-                  <div class="recent-updates card">
-                    <div class="card-header">
-                      <h3 class="h4">项目列表</h3>
-                    </div>
-                    <div class="card-body no-padding">
-                      <!-- Item-->
+                      <!-- Item        -->
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <!--div class="icon"><i class="icon-upload-accept"></i></div-->
                           <div class="title">
-                            <h5>中国石化仪征化纤有限责任公司水务部生活饮用水深度处理改造项目</h5>
-                            <p>张三</p>
+                            <h5>上海建工报价</h5>
+                            <p>2019.03.15</p>
                           </div>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary">选择项目</button>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>广东顺德清远（英德）经济合作区中南片区及核心区近期供水工程设计</h5>
-                            <p>王五</p>
-                          </div>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-primary">选择项目</button>
+                            <strong class="date text">偏差评分</strong>
+                            <strong>85</strong>
+                            <strong> </strong>
+                            <button type="button" class="btn btn-primary">查看</button>
                         </div>
                       </div>
                       <!-- Item        -->
@@ -350,25 +167,62 @@
                         <div class="info d-flex">
                           <!--div class="icon"><i class="icon-upload-accept"></i></div-->
                           <div class="title">
-                            <h5>上海市两港大道快速化工程S2立交匝道</h5>
-                            <p>沈佳麟</p>
+                            <h5>上海城建报价</h5>
+                            <p>2019.03.15</p>
                           </div>
                         </div>
                         <div>
-                            <div class="date text-right"><strong>当前项目</strong></div>
+                            <strong class="date text">偏差评分</strong>
+                            <strong>87</strong>
+                            <strong> </strong>
+                            <button type="button" class="btn btn-primary">查看</button>
                         </div>
                       </div>
-                      <!-- Item-->
+                      <!-- Item        -->
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <!--div class="icon"><i class="icon-upload-accept"></i></div-->
                           <div class="title">
-                            <h5>kafulafuta供水工程</h5>
-                            <p>Tanguy Ndombélé</p>
+                            <h5>淮安建筑报价</h5>
+                            <p>2019.03.15</p>
                           </div>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary">选择项目</button>
+                            <strong class="date text">偏差评分</strong>
+                            <strong>74</strong>
+                            <strong> </strong>
+                            <button type="button" class="btn btn-primary">查看</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 筛选 -->
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="form-group row">
+                        <div class="card-body text-center">
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级筛选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                              <!-- 风险报告-->
+                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                                <div role="document" class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 id="exampleModalLabel" class="modal-title">风险报告</h4>
+                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <strong> 风险评级 ：D</strong>
+                                      <p>  此份报价中《040101003001 基坑挖土方》项单价较推荐价格高，且数量较大，导致报价总额偏高，根据系统分析数据显示，此清单项在 67.57% 的情况下决算数量小于招标数量，属预期减量项，系统建议适当调低该项报价单价以降低预期变更损失</p>
+                                      <p>  此份报价中《040601023002 两层1.5厚高分子自粘防水卷材》项单价较推荐价格高，且数量较大，导致报价总额偏高，根据系统分析数据显示，此清单项在 80.43% 的情况下决算数量小于招标数量，属预期减量项，系统建议适当调低该项报价单价以降低预期变更损失</p>
+                                    <div class="modal-footer">
+                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
+                                      <button type="button" class="btn btn-primary">修改报价</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                       </div>
                     </div>
