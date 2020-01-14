@@ -101,3 +101,7 @@ def moe_Controlled_price_diff(request):
 
 def moe_Controlled_price_analysis(request):
     return render(request, "moe_Controlled_price_analysis.html", )
+
+
+def moe_Monthly_report_analysis(request):
+    return render(request, "moe_Monthly_report_analysis.html", )
