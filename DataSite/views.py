@@ -89,3 +89,7 @@ def moe_Tender_offer_diff_analysis(request):
 
 def moe_Tender_offer_risk(request):
     return render(request, "moe_Tender_offer_risk.html", )
+
+
+def moe_Controlled_price(request):
+    return render(request, "moe_Controlled_price.html", )
