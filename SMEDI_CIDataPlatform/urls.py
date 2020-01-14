@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^moe_Tender_offer_risk/', views.moe_Tender_offer_risk),
     url(r'^moe_Controlled_price/', views.moe_Controlled_price),
     url(r'^moe_Controlled_price_diff/', views.moe_Controlled_price_diff),
+    url(r'^moe_Controlled_price_analysis/', views.moe_Controlled_price_analysis),
     url('', views.login),# views.login
 ]
 
