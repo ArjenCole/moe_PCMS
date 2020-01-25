@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=F:\code\SMEDI_CIDataPlatform\venv"
+set "VIRTUAL_ENV=E:\code\Projects\Python\moe_PCMS\venv"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"
