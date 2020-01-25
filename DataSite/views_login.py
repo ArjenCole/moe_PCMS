@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-from DataSite.models import Users
+from DataSite.models import User_Info
 import hashlib
 import base64
 import time
@@ -18,7 +18,7 @@ def login(request):
         a = (account + password)
         epassword = encode(a)
         try:
-            qUser = Users.objects.get(Account=account)
+            qUser = User_Info.objects.get(Account=account)
             dbPassword = qUser.Password
         except:
             return render(request, 'login.html', {'error': "查无此账号！"}, )
