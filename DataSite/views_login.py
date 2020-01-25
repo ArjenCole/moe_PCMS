@@ -23,6 +23,7 @@ def login(request):
         except:
             return render(request, 'login.html', {'error': "查无此账号！"}, )
         if epassword == dbPassword:
+            request.session['UserID'] = qUser.id
             request.session['UserAccount'] = qUser.Account
             request.session['UserName'] = qUser.Name
             request.session['UserDepartment'] = getDepartment(qUser)
@@ -34,8 +35,14 @@ def login(request):
 
 
 def moe_HOME(request):
+    # 获取登陆用户对应的全部记录
+    tRecord = models.User_Info.objects.get(id=request.session['UserID'])
+    # 通过这一行的Project字段跨表到Project_Info表里找到对应的全部数据行的对象
+    tProjectList = tRecord.Project.all()
+    # 遍历项目列表里获取的对象
 
-    return render(request, 'moe_HOME.html', {'UserAccount': request.session['UserName']}, )
+    #  return render(request, 'moe_HOME.html', {'UserAccount': request.session['UserName']}, )
+    return render(request, 'moe_HOME.html', {'UserName': request.session['UserName']}, {'ProjectList': tProjectList},)
 
 
 def getDepartment(pUser):
