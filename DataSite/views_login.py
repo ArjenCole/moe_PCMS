@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-from DataSite.models import User_Info
+from DataSite import models
 import hashlib
 import base64
 import time
@@ -18,7 +18,7 @@ def login(request):
         a = (account + password)
         epassword = encode(a)
         try:
-            qUser = User_Info.objects.get(Account=account)
+            qUser = models.User_Info.objects.get(Account=account)
             dbPassword = qUser.Password
         except:
             return render(request, 'login.html', {'error': "查无此账号！"}, )
@@ -27,9 +27,15 @@ def login(request):
             request.session['UserName'] = qUser.Name
             request.session['UserDepartment'] = getDepartment(qUser)
             request.session.set_expiry(600)
-            return render(request, "moe_HOME.html")
+            #  return render(request, "moe_HOME.html")
+            return moe_HOME(request)
         else:
             return render(request, 'login.html', {'error': "账号密码错误！"}, )
+
+
+def moe_HOME(request):
+
+    return render(request, 'moe_HOME.html', {'UserAccount': request.session['UserName']}, )
 
 
 def getDepartment(pUser):
