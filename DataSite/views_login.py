@@ -4,7 +4,7 @@ from DataSite import models
 import hashlib
 import base64
 import time
-import datetime
+from datetime import datetime  # 导入datetime模块
 import json
 # Create your views here.
 
@@ -28,21 +28,31 @@ def login(request):
             request.session['UserName'] = qUser.Name
             request.session['UserDepartment'] = getDepartment(qUser)
             request.session.set_expiry(600)
-            #  return render(request, "moe_HOME.html")
-            return moe_HOME(request)
+            return home(request)
         else:
             return render(request, 'login.html', {'error': "账号密码错误！"}, )
 
 
-def moe_HOME(request):
+def home(request):
     # 获取登陆用户对应的全部记录
     tRecord = models.User_Info.objects.get(id=request.session['UserID'])
     # 通过这一行的Project字段跨表到Project_Info表里找到对应的全部数据行的对象
-    tProjectList = tRecord.Project.all()
-    # 遍历项目列表里获取的对象
-
-    #  return render(request, 'moe_HOME.html', {'UserAccount': request.session['UserName']}, )
-    return render(request, 'moe_HOME.html', {'UserName': request.session['UserName']}, {'ProjectList': tProjectList},)
+    tProjectQuerySet = tRecord.Project.all()
+    tProjectList = []
+    tProjectID = request.POST.get("ProjectID", None);
+    if tProjectID is None:
+        tProjectID = 0
+        i = 0
+        tDateTime = datetime.date(datetime(1900, 1, 1))
+        for feProject in tProjectQuerySet:
+            tProjectList.append(feProject)
+            if tProjectList[i].CreateDate > tDateTime:
+                tDateTime = tProjectList[i].CreateDate
+                tProjectID = i
+        # 返回用户信息及项目列表
+        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectID': tProjectID, 'ProjectList': tProjectList})
+    else:
+        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectID': tProjectID, 'ProjectList': tProjectList})
 
 
 def getDepartment(pUser):

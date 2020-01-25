@@ -21,6 +21,7 @@ class Project_Info(models.Model):
     Client = models.CharField(max_length=50)
     Manager = models.CharField(max_length=50)
     ChiefEngineer = models.CharField(max_length=50)
+    CreateDate = models.DateField(null=True)
     Status = models.CharField(max_length=50)
     Remark = models.CharField(max_length=50, null=True)
 
