@@ -14,31 +14,32 @@ class Roles(models.Model):
         return self.Name
 
 
-class User_Info(models.Model):
-    """用户"""
-    Account = models.EmailField()
-    Password = models.CharField(max_length=100)
-    Name = models.CharField(max_length=50)
-    RoleID = models.ForeignKey(Roles)
-    Email = models.EmailField()
-    Remark = models.CharField(max_length=50, null=True)
-
-    def __unicode__(self):
-        return self.Account
-
-
 class Project_Info(models.Model):
     """项目"""
     Name = models.CharField(max_length=254)
     Location = models.CharField(max_length=50)
     Client = models.CharField(max_length=50)
-    Manager = models.ForeignKey(User_Info)
+    Manager = models.CharField(max_length=50)
     ChiefEngineer = models.CharField(max_length=50)
     Status = models.CharField(max_length=50)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
         return self.Name
+
+
+class User_Info(models.Model):
+    """用户"""
+    Account = models.EmailField()
+    Password = models.CharField(max_length=100)
+    Name = models.CharField(max_length=50)
+    RoleID = models.ForeignKey(Roles)
+    Project = models.ManyToManyField(Project_Info)
+    Email = models.EmailField()
+    Remark = models.CharField(max_length=50, null=True)
+
+    def __unicode__(self):
+        return self.Account
 
 
 class Investment_Estimate_Info(models.Model):
