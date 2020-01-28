@@ -49,7 +49,7 @@ def home(request):
             if tProjectList[i].CreateDate > tDateTime:
                 tDateTime = tProjectList[i].CreateDate
                 tProjectID = tProjectList[i].id
-        request.session['PorjectID'] = tProjectID
+        request.session['ProjectID'] = tProjectID
         # 返回用户信息及项目列表
         return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectList': tProjectList})
     else:

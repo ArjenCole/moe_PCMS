@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from DataSite import models
 from DataSite import views_login
 from DataSite import views_check
 # Create your views here.
@@ -68,7 +69,13 @@ def gantt(request):
 
 
 def moe_investment_estimate(request):
-    return render(request, "moe_investment_estimate.html", )
+    if request.method == 'GET':
+        # 获取登陆用户对应的全部记录
+        t = request.session['ProjectID']
+        print("t", type(t))
+        tRecord = models.Investment_Estimate_Info.objects.get(ProjectID=t)
+        return render(request, "moe_investment_estimate.html", )
+
 
 
 def moe_Tender_offer(request):
