@@ -48,11 +48,12 @@ def home(request):
             tProjectList.append(feProject)
             if tProjectList[i].CreateDate > tDateTime:
                 tDateTime = tProjectList[i].CreateDate
-                tProjectID = i
+                tProjectID = tProjectList[i].id
+        request.session['PorjectID'] = tProjectID
         # 返回用户信息及项目列表
-        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectID': tProjectID, 'ProjectList': tProjectList})
+        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectList': tProjectList})
     else:
-        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectID': tProjectID, 'ProjectList': tProjectList})
+        return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectList': tProjectList})
 
 
 def getDepartment(pUser):
