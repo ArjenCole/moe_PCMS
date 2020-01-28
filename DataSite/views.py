@@ -73,16 +73,27 @@ def moe_HOME(request):
 
 
 def moe_investment_estimate(request):
+    # 获取登陆用户对应的全部记录
+    tProjectID = request.session['ProjectID']
+    tRecord = models.Investment_Estimate_Info.objects.filter(ProjectID=tProjectID)
+    tIElist = []
+    for feIE in tRecord:
+        tIElist.append(feIE)
     if request.method == 'GET':
-        # 获取登陆用户对应的全部记录
-        tProjectID = request.session['ProjectID']
-        tRecord = models.Investment_Estimate_Info.objects.filter(ProjectID=tProjectID)
-        tIElist = []
-        for feIE in tRecord:
-            tIElist.append(feIE)
         return render(request, "moe_investment_estimate.html", {'IElist': tIElist})
+    if request.method == 'POST':
+        tPOSTtype = request.POST.get("type", None)
+        if tPOSTtype == 'upload':
+            obj = request.FILES.get('fileInputed')
+            if obj is None:
+                return render(request, "moe_investment_estimate.html", {'IElist': tIElist})
+            else:
+                uploadResult = uploadIE(obj.name)
+                return render(request, "moe_investment_estimate.html", {"uploadResult": uploadResult, 'IElist': tIElist})
 
 
+def uploadIE(pFilePath):
+    return "录入数据"
 
 def moe_Tender_offer(request):
     return render(request, "moe_Tender_offer.html", )
