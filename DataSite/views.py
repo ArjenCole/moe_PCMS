@@ -68,13 +68,19 @@ def gantt(request):
     return render(request, "gantt.html",)
 
 
+def moe_HOME(request):
+    return views_login.home(request)
+
+
 def moe_investment_estimate(request):
     if request.method == 'GET':
         # 获取登陆用户对应的全部记录
-        t = request.session['ProjectID']
-        print("t", type(t))
-        tRecord = models.Investment_Estimate_Info.objects.get(ProjectID=t)
-        return render(request, "moe_investment_estimate.html", )
+        tProjectID = request.session['ProjectID']
+        tRecord = models.Investment_Estimate_Info.objects.filter(ProjectID=tProjectID)
+        tIElist = []
+        for feIE in tRecord:
+            tIElist.append(feIE)
+        return render(request, "moe_investment_estimate.html", {'IElist': tIElist})
 
 
 
