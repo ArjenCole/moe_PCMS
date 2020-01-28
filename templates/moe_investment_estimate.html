@@ -215,10 +215,38 @@
                     <div class="card-body">
                       <div class="form-group row">
                         <div class="card-body text-center">
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp新 建&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级筛选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                            <button type="button" data-toggle="modal" data-target="#myModal1" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp新 建&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                            <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级筛选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                              <!- 新建->
+                              <div id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                                <div role="document" class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 id="exampleModalLabel" class="modal-title">新建</h4>
+                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>请选择上传文件</p>
+                                      <form>
+                                        {% csrf_token %}
+                                        <div class="form-group column">
+                                            <div class="form-group row">
+                                              <label for="fileInput" class="col-sm-3 form-control-label">文件路径</label>
+                                              <div class="col-sm-9">
+                                              <input id="fileInput" name="fileInputed" type="file" required data-msg="请选择文件" class="form-control-file">
+                                            </div>
+                                          </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
+                                      <button type="button" class="btn btn-primary">确定</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                               <!- 高级筛选->
-                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                              <div id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                 <div role="document" class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
