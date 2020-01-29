@@ -125,3 +125,8 @@ def moe_Controlled_price_analysis(request):
 
 def moe_Monthly_report_analysis(request):
     return render(request, "moe_Monthly_report_analysis.html", )
+
+
+def moe_Cost_Quota(request):
+    return render(request, "moe_Cost_Quota.html", )
+

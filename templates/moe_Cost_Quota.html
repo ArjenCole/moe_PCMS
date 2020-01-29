@@ -65,7 +65,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="../static/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">张三</h1>
+              <h1 class="h4">{{ UserName }}</h1>
               <p>成本部</p>
             </div>
           </div>
@@ -89,7 +89,7 @@
                     </li>
                     <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">  招 标 管 理 </a>
                       <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                        <li class="active"><a href="/moe_Controlled_price/">清单及报价</a></li>
+                        <li><a href="/moe_Controlled_price/">清单及报价</a></li>
                         <li><a href="/moe_Controlled_price_diff/">招标偏差分析</a></li>
                         <li><a href="/moe_Controlled_price_analysis/">报价分析评测</a></li>
                       </ul>
@@ -107,7 +107,7 @@
                         <li><a href="#">对比分析</a></li>
                       </ul>
                     </li>
-                    <li><a href="/moe_Cost_Quota/"> 技术经济指标库 </a></li>
+                    <li class="active"><a href="/moe_Cost_Quota/"> 技术经济指标库 </a></li>
                     <li><a href="/moe_HOME/"> 分项造价指标库 </a></li>
           </ul><span class="heading">人力资源</span>
           <ul class="list-unstyled">
@@ -121,106 +121,104 @@
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom"> 清单及报价 </h2>
+              <h2 class="no-margin-bottom"> 技术经济指标库 </h2>
             </div>
           </header>
           <!-- Forms Section-->
           <section class="forms">
             <div class="container-fluid">
               <div class="row">
-                <!-- 清单列表 -->
+                <!-- 筛选项目 -->
                 <div class="col-lg-12">
-                  <div class="recent-updates card">
-                    <div class="card-header">
-                      <h3 class="h4">招标清单列表</h3>
+                  <div class="card">
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">筛选项目</h3>
                     </div>
-                    <div class="card-body no-padding">
-                      <!-- Item        -->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>路基及土建标1标段</h5>
-                            <p>K0+000-K8+534</p>
+                    <div class="card-body">
+                      <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">项目类别</label>
+                          <div class="col-sm-9">
+                            <select name="account" class="form-control mb-3">
+                              <option>市政给水工程</option>
+                              <option>市政排水工程</option>
+                              <option>市政道路工程</option>
+                              <option>公路工程</option>
+                            </select>
                           </div>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-primary">查看</button>
-                            <button type="button" class="btn btn-primary">编辑</button>
-                            <button type="button" class="btn btn-primary">删除</button>
-                        </div>
-                      </div>
-                      <!-- Item        -->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>路基及土建标2标段</h5>
-                            <p>k8+534-k15+425</p>
+                        <label for="forminline" class="col-sm-3 form-control-label">规模筛选（供水规模 10000吨水）</label>
+                        <form class="form-inline" name="forminline">
+                          <div class="form-group">
+                            <label for="inlineFormInput" class="sr-only">Name</label>
+                            <input id="inlineFormInput" type="text" placeholder="规模搜索下限" class="mr-3 form-control">
                           </div>
-                        </div>
+                            <label>~ </label>
+                          <div class="form-group">
+                            <label for="inlineFormInputGroup" class="sr-only">Username</label>
+                            <input id="inlineFormInputGroup" type="text" placeholder="规模搜索上限" class="mr-3 form-control">
+                          </div>
+                        </form>
                         <div>
-                            <button type="button" class="btn btn-primary">查看</button>
-                            <button type="button" class="btn btn-primary">编辑</button>
-                            <button type="button" class="btn btn-primary">删除</button>
+                            <button type="submit" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp搜 索&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级搜索&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                              <!- 高级筛选->
+                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                                <div role="document" class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 id="exampleModalLabel" class="modal-title">高级筛选</h4>
+                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>请输入高级筛选信息</p>
+                                      <form>
+                                        <div class="form-group">
+                                          <label>项目名称</label>
+                                          <input type="email" placeholder="项目名称" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                          <label>项目编号</label>
+                                          <input type="password" placeholder="项目编号" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                          <label>项目业主</label>
+                                          <input type="password" placeholder="业主单位名称" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                          <label>项目经理</label>
+                                          <input type="password" placeholder="经理姓名" class="form-control">
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
+                                      <button type="button" class="btn btn-primary">确定</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- 估算列表 -->
+                <!-- 项目列表 -->
                 <div class="col-lg-12">
                   <div class="recent-updates card">
                     <div class="card-header">
-                      <h3 class="h4">控制价及投标价列表</h3>
+                      <h3 class="h4">项目列表</h3>
                     </div>
                     <div class="card-body no-padding">
-                      <!-- Item        -->
+                      <!-- Item-->
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <!--div class="icon"><i class="icon-upload-accept"></i></div-->
                           <div class="title">
-                            <h5>上海建工报价</h5>
-                            <p>路基及土建1标</p>
+                            <h5>中国石化仪征化纤有限责任公司水务部生活饮用水深度处理改造项目</h5>
+                            <p>2万吨</p>
                           </div>
                         </div>
                         <div>
-                            <strong class="date text">类型</strong>
-                            <strong>报价</strong>
-                            <strong> </strong>
-                            <button type="button" class="btn btn-primary">查看</button>
-                        </div>
-                      </div>
-                      <!-- Item        -->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>上海城建报价</h5>
-                            <p>路基及土建1标</p>
-                          </div>
-                        </div>
-                        <div>
-                            <strong class="date text">类型</strong>
-                            <strong>报价</strong>
-                            <strong> </strong>
-                            <button type="button" class="btn btn-primary">查看</button>
-                        </div>
-                      </div>
-                      <!-- Item        -->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>淮安建筑报价</h5>
-                            <p>路基及土建1标</p>
-                          </div>
-                        </div>
-                        <div>
-                            <strong class="date text">类型</strong>
-                            <strong>报价</strong>
-                            <strong> </strong>
-                            <button type="button" class="btn btn-primary">查看</button>
+                            <div class="date text-right"><strong>25042元/吨水</strong></div>
                         </div>
                       </div>
                       <!-- Item-->
@@ -228,50 +226,25 @@
                         <div class="info d-flex">
                           <!--div class="icon"><i class="icon-upload-accept"></i></div-->
                           <div class="title">
-                            <h5>招标清单控制价</h5>
-                            <p>路基及土建1标</p>
+                            <h5>广东顺德清远（英德）经济合作区中南片区及核心区近期供水工程设计</h5>
+                            <p>4万吨</p>
                           </div>
                         </div>
                         <div>
-                            <strong class="date text">类型</strong>
-                            <strong>清单控制价</strong>
-                            <strong> </strong>
-                            <button type="button" class="btn btn-primary">查看</button>
-                            <button type="button" class="btn btn-primary">编辑</button>
-                            <button type="button" class="btn btn-primary">删除</button>
+                            <div class="date text-right"><strong>20042元/吨水</strong></div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- 筛选 -->
-                <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="form-group row">
-                        <div class="card-body text-center">
-                            <button type="button" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp录入清单&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                            <button type="button" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp录入报价控制价&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级筛选&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                              <!-- 风险报告-->
-                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
-                                <div role="document" class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h4 id="exampleModalLabel" class="modal-title">风险报告</h4>
-                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <strong> 风险评级 ：D</strong>
-                                      <p>  此份报价中《040101003001 基坑挖土方》项单价较推荐价格高，且数量较大，导致报价总额偏高，根据系统分析数据显示，此清单项在 67.57% 的情况下决算数量小于招标数量，属预期减量项，系统建议适当调低该项报价单价以降低预期变更损失</p>
-                                      <p>  此份报价中《040601023002 两层1.5厚高分子自粘防水卷材》项单价较推荐价格高，且数量较大，导致报价总额偏高，根据系统分析数据显示，此清单项在 80.43% 的情况下决算数量小于招标数量，属预期减量项，系统建议适当调低该项报价单价以降低预期变更损失</p>
-                                    <div class="modal-footer">
-                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
-                                      <button type="button" class="btn btn-primary">修改报价</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                      <!-- Item-->
+                      <div class="item d-flex justify-content-between">
+                        <div class="info d-flex">
+                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
+                          <div class="title">
+                            <h5>kafulafuta供水工程</h5>
+                            <p>2.5万吨</p>
+                          </div>
+                        </div>
+                        <div>
+                            <div class="date text-right"><strong>35042元/吨水</strong></div>
                         </div>
                       </div>
                     </div>
