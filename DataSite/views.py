@@ -3,6 +3,8 @@ from django.shortcuts import HttpResponse
 from DataSite import models
 from DataSite import views_login
 from DataSite import views_check
+from DataSite import models
+from django.db.models import Q
 # Create your views here.
 
 
@@ -128,5 +130,10 @@ def moe_Monthly_report_analysis(request):
 
 
 def moe_Cost_Quota(request):
-    return render(request, "moe_Cost_Quota.html", )
+    if request.method == 'POST':
+        tPOSTcategoary = request.POST.get("Categoary", None)
+        tPOSTbottom = request.POST.get("Bottom", None)
+        tPOSTtop = request.POST.get("Top", None)
+        tlist = models.Technical_Economic_Indicators.objects.filter(Project__Categoary=tPOSTcategoary).filter(Scale__gt=tPOSTbottom).filter(Scale__lt=tPOSTtop)
+    return render(request, "moe_Cost_Quota.html", {'projectlist': tlist})
 
