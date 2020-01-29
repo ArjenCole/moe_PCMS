@@ -34,6 +34,105 @@ $(document).ready(function () {
             }
         },
         data: {
+            labels: ["0", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32"],
+            datasets: [
+                {
+                    label: "已完实际费用",
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: "transparent",
+                    borderColor: '#f15765',
+                    pointBorderColor: '#da4c59',
+                    pointHoverBackgroundColor: '#da4c59',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBorderColor: "#fff",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 0,
+                    data: [0, 0, 0, 0, 3, 7, 12, 25, 35, 42, 47, 50, 52, 53, 54, 55, 55],
+                    spanGaps: false
+                },
+                {
+                    label: "已完完计费用",
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: "transparent",
+                    borderColor: '#f1eb5f',
+                    pointBorderColor: '#d8da4b',
+                    pointHoverBackgroundColor: '#d7da1b',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBorderColor: "#fff",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 0,
+                    data: [0, 0, 0, 0, 1, 5, 10, 20, 30, 35, 40, 45, 48, 49, 50, 51, 52],
+                    spanGaps: false
+                },
+                {
+                    label: "拟完计划费用",
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: "transparent",
+                    borderColor: "#54e69d",
+                    pointHoverBackgroundColor: "#44c384",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBorderColor: "#44c384",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBorderColor: "#fff",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [0, 0, 0, 0, 1, 3, 5, 9, 15, 20, 30, 40, 45, 47, 48, 49, 50],
+                    spanGaps: false
+                }
+            ]
+        }
+    });
+
+    /*
+    var LINECHART = $('#lineCahrt');
+    var myLineChart = new Chart(LINECHART, {
+        type: 'line',
+        options: {
+            scales: {
+                xAxes: [{
+                    display: true,
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            legend: {
+                display: legendState
+            }
+        },
+        data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"],
             datasets: [
                 {
@@ -85,7 +184,7 @@ $(document).ready(function () {
             ]
         }
     });
-
+    */
 
 
     // ------------------------------------------------------- //
