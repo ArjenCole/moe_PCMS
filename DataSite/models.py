@@ -73,8 +73,8 @@ class Investment_Estimate_Element(models.Model):
         return self.SumCost
 
 
-class Tender_Offer_Info(models.Model):
-    """投标报价"""
+class Bill_Of_Quantites_Info(models.Model):
+    """清单"""
     Name = models.CharField(max_length=50)
     ListVersion = models.CharField(max_length=50)
     BidSection = models.CharField(max_length=50)
@@ -87,13 +87,29 @@ class Tender_Offer_Info(models.Model):
         return self.Name
 
 
-class Tender_Offer_Element(models.Model):
+class TOPC_Info(models.Model):
+    """报价控制价"""
+    Name = models.CharField(max_length=50)
+    ListVersion = models.CharField(max_length=50)
+    BidSection = models.CharField(max_length=50)
+    CreateDate = models.DateField(null=True)
+    EditDate = models.DateField(null=True)
+    ProjectID = models.ForeignKey(Project_Info)
+    BillID = models.ForeignKey(Bill_Of_Quantites_Info)
+    Category = models.DateField(null=True)
+    Remark = models.CharField(max_length=50, null=True)
+
+    def __unicode__(self):
+        return self.Name
+
+
+class TOPC_Element(models.Model):
     """投标报价项"""
     ListID = models.CharField(max_length=50)
     Unit = models.CharField(max_length=50)
     Quantities = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     Price = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
-    TendOfferId = models.ForeignKey(Tender_Offer_Info)
+    TendOfferId = models.ForeignKey(TOPC_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
