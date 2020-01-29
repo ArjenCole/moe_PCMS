@@ -74,8 +74,8 @@ def moe_HOME(request):
 
 def moe_investment_estimate(request):
     # 获取登陆用户对应的全部记录
-    tProjectID = request.session['ProjectID']
-    tRecord = models.Investment_Estimate_Info.objects.filter(ProjectID=tProjectID)
+    tProjectID = request.session['Project']
+    tRecord = models.Investment_Estimate_Info.objects.filter(Project=tProjectID)
     tIElist = []
     for feIE in tRecord:
         tIElist.append(feIE)

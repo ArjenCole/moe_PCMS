@@ -39,7 +39,7 @@ def home(request):
     # 通过这一行的Project字段跨表到Project_Info表里找到对应的全部数据行的对象
     tProjectQuerySet = tRecord.Project.all()
     tProjectList = []
-    tProjectID = request.POST.get("ProjectID", None);
+    tProjectID = request.POST.get("Project", None);
     if tProjectID is None:
         tProjectID = 0
         i = 0
@@ -49,7 +49,7 @@ def home(request):
             if tProjectList[i].CreateDate > tDateTime:
                 tDateTime = tProjectList[i].CreateDate
                 tProjectID = tProjectList[i].id
-        request.session['ProjectID'] = tProjectID
+        request.session['Project'] = tProjectID
         # 返回用户信息及项目列表
         return render(request, 'moe_HOME.html', {'UserName': request.session['UserName'], 'ProjectList': tProjectList})
     else:
