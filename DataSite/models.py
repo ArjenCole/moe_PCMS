@@ -34,7 +34,7 @@ class User_Info(models.Model):
     Account = models.EmailField()
     Password = models.CharField(max_length=100)
     Name = models.CharField(max_length=50)
-    RoleID = models.ForeignKey(Roles)
+    Role = models.ForeignKey(Roles)
     Project = models.ManyToManyField(Project_Info)
     Email = models.EmailField()
     Remark = models.CharField(max_length=50, null=True)
@@ -50,7 +50,7 @@ class Investment_Estimate_Info(models.Model):
     QuotaName = models.CharField(max_length=50)
     CreateDate = models.DateField(null=True)
     EditDate = models.DateField(null=True)
-    ProjectID = models.ForeignKey(Project_Info)
+    Project = models.ForeignKey(Project_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
@@ -65,7 +65,7 @@ class Investment_Estimate_Element(models.Model):
     SumCost = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     Quantities = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     Unit = models.CharField(max_length=50)
-    InvestmentEstimateId = models.ForeignKey(Investment_Estimate_Info)
+    InvestmentEstimate = models.ForeignKey(Investment_Estimate_Info)
     ParentId = models.IntegerField(null=True)
     Remark = models.CharField(max_length=50, null=True)
 
@@ -80,7 +80,7 @@ class Bill_Of_Quantites_Info(models.Model):
     BidSection = models.CharField(max_length=50)
     CreateDate = models.DateField(null=True)
     EditDate = models.DateField(null=True)
-    ProjectID = models.ForeignKey(Project_Info)
+    Project = models.ForeignKey(Project_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
@@ -94,8 +94,8 @@ class TOPC_Info(models.Model):
     BidSection = models.CharField(max_length=50)
     CreateDate = models.DateField(null=True)
     EditDate = models.DateField(null=True)
-    ProjectID = models.ForeignKey(Project_Info)
-    BillID = models.ForeignKey(Bill_Of_Quantites_Info)
+    Project = models.ForeignKey(Project_Info)
+    Bill = models.ForeignKey(Bill_Of_Quantites_Info)
     Category = models.DateField(null=True)
     Remark = models.CharField(max_length=50, null=True)
 
@@ -109,7 +109,7 @@ class TOPC_Element(models.Model):
     Unit = models.CharField(max_length=50)
     Quantities = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     Price = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
-    TendOfferId = models.ForeignKey(TOPC_Info)
+    TOPC = models.ForeignKey(TOPC_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
@@ -122,7 +122,7 @@ class Monthly_Report_Info(models.Model):
     CreateDate = models.DateField(null=True)
     EditDate = models.DateField(null=True)
     Operator = models.ForeignKey(User_Info)
-    ProjectID = models.ForeignKey(Project_Info)
+    Project = models.ForeignKey(Project_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
@@ -139,7 +139,7 @@ class Monthly_Report_Element(models.Model):
     Price = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     ContractQuantities = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     ContractPrice = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
-    MonthlyReportId = models.ForeignKey(Monthly_Report_Info)
+    MonthlyReport = models.ForeignKey(Monthly_Report_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
@@ -154,7 +154,7 @@ class Technical_Economic_Indicators(models.Model):
     InvestmentEstimate = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     DesignEstimate = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
     BudgetElement = models.DecimalField(max_digits=19, decimal_places=4, default=0.00)
-    ProjectId = models.ForeignKey(Project_Info)
+    Project = models.ForeignKey(Project_Info)
     Remark = models.CharField(max_length=50, null=True)
 
     def __unicode__(self):
