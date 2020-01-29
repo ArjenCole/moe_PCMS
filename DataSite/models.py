@@ -17,6 +17,7 @@ class Roles(models.Model):
 class Project_Info(models.Model):
     """项目"""
     Name = models.CharField(max_length=254)
+    Category = models.CharField(max_length=50)
     Location = models.CharField(max_length=50)
     Client = models.CharField(max_length=50)
     Manager = models.CharField(max_length=50)
