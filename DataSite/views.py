@@ -137,3 +137,11 @@ def moe_Cost_Quota(request):
         tlist = models.Technical_Economic_Indicators.objects.filter(Project__Categoary=tPOSTcategoary).filter(Scale__gt=tPOSTbottom).filter(Scale__lt=tPOSTtop)
     return render(request, "moe_Cost_Quota.html", {'projectlist': tlist})
 
+
+def moe_Bill_Quota(request):
+    if request.method == 'POST':
+        tPOSTcategoary = request.POST.get("Categoary", None)
+        tPOSTbottom = request.POST.get("Bottom", None)
+        tPOSTtop = request.POST.get("Top", None)
+        tlist = models.Technical_Economic_Indicators.objects.filter(Project__Categoary=tPOSTcategoary).filter(Scale__gt=tPOSTbottom).filter(Scale__lt=tPOSTtop)
+    return render(request, "moe_Bill_Quota.html")

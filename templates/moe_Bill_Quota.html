@@ -107,8 +107,8 @@
                         <li><a href="#">对比分析</a></li>
                       </ul>
                     </li>
-                    <li class="active"><a href="/moe_Cost_Quota/"> 技术经济指标库 </a></li>
-                    <li><a href="/moe_Bill_Quota/"> 分项造价指标库 </a></li>
+                    <li><a href="/moe_Cost_Quota/"> 技术经济指标库 </a></li>
+                    <li class="active"><a href="/moe_Bill_Quota/"> 分项造价指标库 </a></li>
           </ul><span class="heading">人力资源</span>
           <ul class="list-unstyled">
             <li> <a href="/tables/"> <i class="icon-user"></i>个人信息 </a></li>
@@ -121,136 +121,165 @@
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom"> 技术经济指标库 </h2>
+              <h2 class="no-margin-bottom"> 分项造价指标库 </h2>
             </div>
           </header>
           <!-- Forms Section-->
           <section class="forms">
             <div class="container-fluid">
-              <div class="row">
                 <!-- 筛选项目 -->
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-header d-flex align-items-center">
-                        <h3 class="h4">筛选项目</h3>
+                        <h3 class="h4">搜索</h3>
                     </div>
                     <div class="card-body">
-                      <div class="form-group row">
-                          <label class="col-sm-3 form-control-label">项目类别</label>
-                          <div class="col-sm-9">
-                            <select name="account" class="form-control mb-3">
-                              <option>市政给水工程</option>
-                              <option>市政排水工程</option>
-                              <option>市政道路工程</option>
-                              <option>公路工程</option>
-                            </select>
-                          </div>
-                        <label for="forminline" class="col-sm-3 form-control-label">规模筛选（供水规模 10000吨水）</label>
-                        <form class="form-inline" name="forminline">
-                          <div class="form-group">
-                            <label for="inlineFormInput" class="sr-only">Name</label>
-                            <input id="inlineFormInput" type="text" placeholder="规模搜索下限" class="mr-3 form-control">
-                          </div>
-                            <label>~ </label>
-                          <div class="form-group">
-                            <label for="inlineFormInputGroup" class="sr-only">Username</label>
-                            <input id="inlineFormInputGroup" type="text" placeholder="规模搜索上限" class="mr-3 form-control">
-                          </div>
-                        </form>
-                        <div>
-                            <button type="submit" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp搜 索&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp高级搜索&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-                              <!- 高级筛选->
-                              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
-                                <div role="document" class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h4 id="exampleModalLabel" class="modal-title">高级筛选</h4>
-                                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p>请输入高级筛选信息</p>
-                                      <form>
-                                        <div class="form-group">
-                                          <label>项目名称</label>
-                                          <input type="email" placeholder="项目名称" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目编号</label>
-                                          <input type="password" placeholder="项目编号" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目业主</label>
-                                          <input type="password" placeholder="业主单位名称" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                          <label>项目经理</label>
-                                          <input type="password" placeholder="经理姓名" class="form-control">
-                                        </div>
-                                      </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
-                                      <button type="button" class="btn btn-primary">确定</button>
-                                    </div>
-                                  </div>
+                              <div class="input-group">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                  <button type="button" class="btn btn-primary">—></button>
                                 </div>
                               </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <!-- 项目列表 -->
+          <!-- Forms Section-->
+          <section class="forms">
+                <!-- Form Elements -->
                 <div class="col-lg-12">
-                  <div class="recent-updates card">
-                    <div class="card-header">
-                      <h3 class="h4">项目列表</h3>
+                  <div class="card">
+                    <!--div class="card-close">
+                      <div class="dropdown">
+                        <button type="button" id="closeCard5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                        <div aria-labelledby="closeCard5" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                      </div>
+                    </div-->
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">清单项列表</h3>
                     </div>
-                    <div class="card-body no-padding">
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>中国石化仪征化纤有限责任公司水务部生活饮用水深度处理改造项目</h5>
-                            <p>2万吨</p>
-                          </div>
-                        </div>
-                        <div>
-                            <div class="date text-right"><strong>25042元/吨水</strong></div>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>广东顺德清远（英德）经济合作区中南片区及核心区近期供水工程设计</h5>
-                            <p>4万吨</p>
-                          </div>
-                        </div>
-                        <div>
-                            <div class="date text-right"><strong>20042元/吨水</strong></div>
-                        </div>
-                      </div>
-                      <!-- Item-->
-                      <div class="item d-flex justify-content-between">
-                        <div class="info d-flex">
-                          <!--div class="icon"><i class="icon-upload-accept"></i></div-->
-                          <div class="title">
-                            <h5>kafulafuta供水工程</h5>
-                            <p>2.5万吨</p>
-                          </div>
-                        </div>
-                        <div>
-                            <div class="date text-right"><strong>35042元/吨水</strong></div>
-                        </div>
+                    <div class="card-body">
+                      <div class="table-responsive table-striped table-hover">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>清单编号</th>
+                              <th>清单项名称</th>
+                              <th>单位</th>
+                              <th>数量</th>
+                              <th>单价</th>
+                              <th>偏差率</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              {% for x in checkList %}
+                                <tr>
+                                    <th scope="row"> checkList.index({{x}}) </th>
+                                    <td>{{ x }}</td>
+                                </tr>
+                              {% endfor %}
+                                <tr>
+                                    <td>040101003001</td>
+                                    <td>挖基坑土方</td>
+                                    <td>m3</td>
+                                    <td>1235/1350</td>
+                                    <td>84.52/121.76</td>
+                                    <td>44.07%</td>
+                                </tr>
+                                <tr>
+                                    <td>040103002001</td>
+                                    <td>余方弃置</td>
+                                    <td>m3</td>
+                                    <td>806/705</td>
+                                    <td>19.5/18.55</td>
+                                    <td>-4.85%</td>
+                                </tr>
+                                <tr>
+                                    <td>040306002001</td>
+                                    <td>箱涵底板垫层 C20</td>
+                                    <td>m3</td>
+                                    <td>56/75</td>
+                                    <td>557.84/686.97</td>
+                                    <td>23.15%</td>
+                                </tr>
+                                <tr>
+                                    <td>040306002002</td>
+                                    <td>箱涵底板C30P8</td>
+                                    <td>m3</td>
+                                    <td>354/400</td>
+                                    <td>879.52/718.47</td>
+                                    <td>-18.31%</td>
+                                </tr>
+                                <tr>
+                                    <td>040506008001</td>
+                                    <td>现浇混凝土池壁(隔墙)</td>
+                                    <td>m3</td>
+                                    <td>756/856</td>
+                                    <td>1628.63/1796.21</td>
+                                    <td>10.29%</td>
+                                </tr>
+                                <tr>
+                                    <td>040701002001</td>
+                                    <td>非预应力钢筋</td>
+                                    <td>t</td>
+                                    <td>75/90</td>
+                                    <td>6034.45/7657.71</td>
+                                    <td>26.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>040406303001</td>
+                                    <td>基坑钢支撑及围檩</td>
+                                    <td>t</td>
+                                    <td>15/17</td>
+                                    <td>3953.94/5902.04</td>
+                                    <td>49.27%</td>
+                                </tr>
+                                <tr>
+                                    <td>040406302001</td>
+                                    <td>基坑C20细石混凝土填实</td>
+                                    <td>m3</td>
+                                    <td>120/160</td>
+                                    <td>769.68/703.87</td>
+                                    <td>-8.55%</td>
+                                </tr>
+                                <tr>
+                                    <td>040601022001</td>
+                                    <td>C20细石混凝土保护层 50mm厚</td>
+                                    <td>m2</td>
+                                    <td>89/98</td>
+                                    <td>60.95/78.68</td>
+                                    <td>29.09%</td>
+                                </tr>
+                                <tr>
+                                    <td>040601023001</td>
+                                    <td>2厚非固化橡胶沥青涂料+4厚耐根穿刺卷材</td>
+                                    <td>m2</td>
+                                    <td>234/354</td>
+                                    <td>218.08/306.77</td>
+                                    <td>40.67%</td>
+                                </tr>
+                                <tr>
+                                    <td>040601023002</td>
+                                    <td>两层1.5厚高分子自粘防水卷材</td>
+                                    <td>m2</td>
+                                    <td>425/435</td>
+                                    <td>151.59/212.46</td>
+                                    <td>40.16%</td>
+                                </tr>
+                                <tr>
+                                    <td>040601022003</td>
+                                    <td>240厚砖墙900高+120厚砖墙到顶+50厚挤塑聚苯板</td>
+                                    <td>m2</td>
+                                    <td>120/210</td>
+                                    <td>155.1/175.06</td>
+                                    <td>12.87%</td>
+                                </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+          </section>
             </div>
           </section>
           <!-- Page Footer-->
