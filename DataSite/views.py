@@ -139,6 +139,8 @@ def moe_Cost_Quota(request):
 
 
 def moe_Bill_Quota(request):
+    tlist = []
+    tMathList = []
     if request.method == 'POST':
         tKeyWord = request.POST.get("KeyWord", None)
         tlist = models.Technical_Economic_Indicators.objects.filter(Q(Name__icontains=tKeyWord) | Q(ListVersion__icontains=tKeyWord) | Q(Unit__icontains=tKeyWord) | Q(Remark__icontains=tKeyWord))
